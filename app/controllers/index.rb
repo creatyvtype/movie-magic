@@ -13,6 +13,5 @@ end
 post '/movies/query' do 
 	@query = params[:search_query]
 	@results = Tmdb::Movie.search(@query)
-	
 	erb :results
 end

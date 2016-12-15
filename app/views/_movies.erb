@@ -1,7 +1,14 @@
 <% movies.each do |movie| %>
 		<div class="index-poster">
 			<a href="/movies/<%= movie.id %>">
+				<% if movie.poster_path %>
 				<img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" />
+				<% else %>
+					<h2>
+					<%= movie.title %>
+					</h2>
+				<% end %>
+
 			</a>
 		</div>
 <% end %>
