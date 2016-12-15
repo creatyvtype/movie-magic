@@ -1,10 +1,38 @@
-<ul><%= movie.title %>
-	<li>Overview: <%= movie.overview %></li>
-	<li>Released: <%= movie.release_date %></li>
-	<li>Popularity: <%= movie.popularity %></li>
-	<li>Vote Count: <%= movie.vote_count %></li>
-	<li>Vote Average: <%= movie.vote_average %></li>
-	<li>Poster: <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" /></li>
-	<li>Backdrop: <img src="https://image.tmdb.org/t/p/w500<%= movie.backdrop_path %>" /></li>
+<h1>
+	<%= @movie["title"] %>
+</h1>
 
-</ul>
+<div class="show-container">
+	<div class="show-poster">
+		<img src="https://image.tmdb.org/t/p/w500<%= @movie["poster_path"] %>" />
+	</div>
+
+	<div class="show-content">
+		<% if @movie["tagline"].length > 0 %>
+			<h2>
+				"<%= @movie["tagline"] %>""
+			</h2>
+		<% end %>
+
+		<p>
+			<span class="bold">Synopsis:</span> <%= @movie["overview"] %>
+		</p>
+
+		<p>
+			Genre(s): <%= (@movie["genres"].map { |genre| genre["name"] }).join(', ') %>
+		</p>
+
+		<p>
+			Release Date: <%= @movie["release_date"] %>
+		</p>
+		<p>Voting Average: <%= @movie["vote_average"] %> out of <%= @movie["vote_count"] %> votes
+		</p>
+		<p>
+			Popularity: <%= @movie["popularity"] %>
+		</p>
+
+		<p>
+			<a href="<%= @movie["homepage"] %>"><%= @movie["title"] %> Home Page</a>
+		</p>
+	</div>
+</div>

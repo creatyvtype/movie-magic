@@ -23,6 +23,10 @@ a:hover {
 	color:red;
 }
 
+div {
+	vertical-align: top;
+}
+
 .search-button {
     width: 35px;
     height: 35px;
@@ -54,14 +58,13 @@ a:hover {
     margin: 20px auto;
 }
 
-.poster {
+.index-poster {
 	display: inline-block;
-	vertical-align: top;
     width: 24.8%;
     padding: 30px 2%;
     overflow: hidden;
 }
-.poster img {
+.index-poster img {
 	object-fit: contain;
 	width: 100%;
 }
@@ -70,6 +73,35 @@ h1 {
 	text-align: center;
 	font-size: 50px;
 	margin: 0;
+}
+
+.show-container {
+	margin: 30px auto;
+	max-width: 1300px;
+	width: 80%;
+}
+
+.show-poster {
+	display: inline-block;
+	width: 400px;
+	overflow: hidden;
+}
+
+.show-poster img {
+	object-fit: contain;
+	width: 100%;
+}
+
+.bold {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.show-content {
+	font-size: 20px;
+	max-width: 715px;
+	display: inline-block;
+	padding: 10px 0 0 40px;
 }
 
 #header {
