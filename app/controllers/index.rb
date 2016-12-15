@@ -9,3 +9,10 @@ get '/movies/:id' do
 	ap @movie["title"]
 	erb :show
 end
+
+post '/movies/query' do 
+	@query = params[:search_query]
+	@results = Tmdb::Movie.search(@query)
+	
+	erb :results
+end

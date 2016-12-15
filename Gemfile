@@ -20,6 +20,8 @@ gem 'awesome_print'
 gem 'dotenv'
 gem 'themoviedb'
 
+gem 'byebug'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

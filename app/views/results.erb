@@ -1,0 +1,13 @@
+<h1>
+	Results for: "<%= @query %>"
+</h1>
+
+<%= erb :_movies, locals: { movies: @results }%>
+<% if @results.length < 1 %>
+	<h2 class="center">
+		Your search came up with no results. Please try another search
+	</h2>
+	<div class="center">
+		<%= erb :_search %>
+	</div>
+<% end %>

@@ -25,6 +25,8 @@ require 'awesome_print'
 require 'dotenv'
 Dotenv.load
 
+require 'byebug'
+
 require 'themoviedb'
 Tmdb::Api.key(ENV["MOVIEDB_KEY"])
 
