@@ -15,6 +15,11 @@ gem 'rake'
 gem 'bcrypt'
 gem 'shotgun'
 
+gem 'awesome_print'
+
+gem 'dotenv'
+gem 'themoviedb'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

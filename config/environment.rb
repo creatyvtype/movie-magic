@@ -20,6 +20,14 @@ require "sinatra/reloader" if development?
 require 'bcrypt'
 require 'erb'
 
+require 'awesome_print'
+
+require 'dotenv'
+Dotenv.load
+
+require 'themoviedb'
+Tmdb::Api.key(ENV["MOVIEDB_KEY"])
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
