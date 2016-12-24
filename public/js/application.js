@@ -1,7 +1,38 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+	searchChangeHandler()
 });
+
+
+function searchChangeHandler() {
+	$('.search-bar').on('input', function(event){
+		showLoader()
+
+		var data = {
+			search_query: event.target.value
+		}
+
+		$.ajax({
+			method: 'POST',
+			url: '/movies/query',
+			data: data
+		})
+		.done(function(response){
+			$('#main').html(response)
+			hideLoader()
+		})
+		.fail(function(response){
+			hideLoader()
+			console.log("failed to get resource")
+			console.log(response)
+		})
+
+	})
+}
+
+function showLoader() {
+	$('.loader').show()
+}
+
+function hideLoader() {
+	$('.loader').hide()
+}
